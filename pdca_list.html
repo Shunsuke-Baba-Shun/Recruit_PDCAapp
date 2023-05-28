@@ -1,0 +1,20 @@
+{% entends 'base.html' %}
+
+{% block title %}PDCA 一覧{% endblock title %}
+
+{% block content %}
+<body>
+  {% for items in object_list %}
+  <div class="container">
+    <ul class="list-group">
+      <li class="list-group-item">{{ items.title }}</li>
+      <li class="list-group-item">{{ items.Category }}</li>
+      <li class="list-group-item">{{ items.description }}/li>
+      <li class="list-group-item">{{ items.Plan }}</li>
+      <li class="list-group-item">{{ items.Do }}</li>
+      <li class="list-group-item">{{ items.Check }}</li>
+      <li class="list-group-item">{{ items.Action }}</li>
+    </ul>
+  </div>
+  {% endfor %}
+{% endblock content %}
