@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}PDCA トップページ{% endblock title %}
+
+{% block content %}
+<body>
+  <a href="{% url 'pdca-create' %}">PDCAを作る</a>
+  {% for item in object_list %}
+  <div class="container">
+    <ul class="list-group">
+      <li class="list-group-item">{{ item.title }}</li>
+      <li class="list-group-item">{{ item.Category }}</li>
+      <a href="{% url 'pdca-detail' item.pk %}" class="btn btn-primary">詳細へ</a>
+      <li class="list-group-item">{{ item.description }}</li>
+      <li class="list-group-item">{{ item.Plan }}</li>
+      <li class="list-group-item">{{ item.Do }}</li>
+      <li class="list-group-item">{{ item.Check }}</li>
+      <li class="list-group-item">{{ item.Action }}</li>
+    </ul>
+  </div>
+  {% endfor %}
+{% endblock content %}
